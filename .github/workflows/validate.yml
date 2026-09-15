@@ -1,0 +1,60 @@
+name: IBM Bob Hackathon Submission Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-repository-structure:
+    name: Validate Submission Structure & Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify Required Submission Files
+        run: |
+          echo "Checking required hackathon submission files and directories..."
+          test -f submission.yaml || { echo "Missing submission.yaml"; exit 1; }
+          test -f README.md || { echo "Missing README.md"; exit 1; }
+          test -f CONTRIBUTING.md || { echo "Missing CONTRIBUTING.md"; exit 1; }
+          test -d docs || { echo "Missing docs directory"; exit 1; }
+          test -f docs/problem-statement.md || { echo "Missing docs/problem-statement.md"; exit 1; }
+          test -f docs/solution-overview.md || { echo "Missing docs/solution-overview.md"; exit 1; }
+          test -f docs/architecture.md || { echo "Missing docs/architecture.md"; exit 1; }
+          test -f docs/setup-guide.md || { echo "Missing docs/setup-guide.md"; exit 1; }
+          test -d src/frontend || { echo "Missing src/frontend"; exit 1; }
+          test -d src/backend || { echo "Missing src/backend"; exit 1; }
+          test -d demo || { echo "Missing demo directory"; exit 1; }
+          test -d presentation || { echo "Missing presentation directory"; exit 1; }
+          echo "All required files and directories are present!"
+
+      - name: Validate submission.yaml Format
+        run: |
+          python -c "import yaml; data = yaml.safe_load(open('submission.yaml')); assert 'team' in data and 'submission' in data; print('submission.yaml is valid!')" || exit 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate Backend Code & Dependencies
+        run: |
+          cd src/backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -c "import main; print('FastAPI backend imports successfully!')"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate & Build Frontend
+        run: |
+          cd src/frontend
+          npm ci || npm install
+          npm run build
+          echo "Frontend build completed cleanly!"

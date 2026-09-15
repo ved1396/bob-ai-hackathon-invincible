@@ -1,0 +1,22 @@
+team:
+  name: "Invincible"
+  track: "Grid Infrastructure & Operational AI"
+  lead:
+    name: "Ved Upadhyay"
+    email: "ved.upadhyay@example.com"
+  members:
+    - name: "Ved Upadhyay"
+      role: "Full-Stack & AI Systems Engineer"
+submission:
+  title: "GRIDGUARD AI — Power Outage Prediction & Grid Equipment Failure Advisor"
+  problem_statement: "Power transformer and substation failures cause catastrophic grid blackouts, high financial losses, and widespread public disruption. Utilities currently rely on calendar-based maintenance schedules despite grid assets generating continuous health signals (temperature, vibration, partial discharge, oil breakdown, load). Furthermore, severe weather events and asset criticality are not effectively combined into a single operational decision system."
+  solution_summary: "GRIDGUARD AI is a production-grade operational intelligence platform designed for utility grid operators. It fuses multi-sensor asset SCADA telemetry, weather forecasts, historical incident logs, asset age, load, and grid criticality into a unified, deterministic risk prediction engine. GridGuard features a load-bearing IBM Bob Operational Assistant that queries PostgreSQL ground-truth telemetry and enables operators to execute maintenance work orders and crew dispatches directly through interactive AI recommendations."
+  key_features:
+    - "Real-Time SCADA Telemetry Monitoring: Continuous tracking of top-oil temperature, mechanical vibration, dielectric oil breakdown, partial discharge, and load."
+    - "Shared Multi-Factor Risk Engine: Composite failure probability model evaluating sensor health, weather surcharges, historical incidents, age, load, and grid impact."
+    - "Atmospheric Weather Corridor Intelligence: Real-time storm front and wind loading integration into risk scores."
+    - "Geographic Grid Risk Topology Map: Interactive visualization of substations, feeder lines, transformers, and storm corridors with instant diagnostic inspection."
+    - "Full PostgreSQL/Supabase Data Persistence: Real CRUD asset lifecycle operations, work order queue management, and crew dispatch persisting to PostgreSQL."
+    - "Proactive Field Crew Pre-Positioning: Optimizes crew allocation based on arrival ETA, equipment specialization, and high-risk outage zones."
+    - "Load-Bearing IBM Bob Operational Assistant: Grounded in live PostgreSQL telemetry, providing structured diagnostic deep-dives and executable operational actions."
+  repository_url: "https://github.com/ved1396/bob-ai-hackathon-invincible"
