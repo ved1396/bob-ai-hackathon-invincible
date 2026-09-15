@@ -41,6 +41,8 @@ jobs:
           python-version: '3.11'
 
       - name: Validate Backend Code & Dependencies
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
         run: |
           cd src/backend
           python -m pip install --upgrade pip
