@@ -20,6 +20,13 @@ An AI-powered power-grid intelligence and predictive risk management platform th
 | **Team Members** | 1. Ved Vekariya — 24DCS149<br>2. Shlok Piprodia — 24DCS101<br>3. Mayur Patel — 24DCS077<br>4. Dhrumi Kansagara — 24DCE055 |
 
 ---
+## 🖼️ Screenshots
+
+![Utility Command Center](demo/screenshots/1.png)
+![Bob AI Assistant](demo/screenshots/2.png)
+![Operational Grid Risk Map](demo/screenshots/3.png)
+![Operations Alert Console](demo/screenshots/4.png)
+![Predictive Maintenance Queue](demo/screenshots/5.png)
 
 ## 🎯 Problem Statement
 
