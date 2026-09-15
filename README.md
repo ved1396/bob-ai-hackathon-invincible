@@ -22,11 +22,13 @@ An AI-powered power-grid intelligence and predictive risk management platform th
 ---
 ## 🖼️ Screenshots
 
-![Utility Command Center](demo/screenshots/1.png)
-![Bob AI Assistant](demo/screenshots/2.png)
-![Operational Grid Risk Map](demo/screenshots/3.png)
-![Operations Alert Console](demo/screenshots/4.png)
-![Predictive Maintenance Queue](demo/screenshots/5.png)
+| Photo | Description |
+|---|---|
+| <img src="demo/screenshots/1.png" width="400"> | **Utility Command Center** — Real-time overview of grid health, critical assets, incidents, and crew readiness. |
+| <img src="demo/screenshots/2.png" width="400"> | **Bob AI Assistant** — AI-powered analysis of asset risks with operational recommendations. |
+| <img src="demo/screenshots/3.png" width="400"> | **Operational Grid Risk Map** — Visualizes grid assets and their current risk levels. |
+| <img src="demo/screenshots/4.png" width="400"> | **Operations Alert Console** — Centralized monitoring of critical equipment and operational alerts. |
+| <img src="demo/screenshots/5.png" width="400"> | **Predictive Maintenance Queue** — Prioritized maintenance actions based on asset risk and operational impact. |
 
 ## 🎯 Problem Statement
 
