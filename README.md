@@ -7,6 +7,7 @@ An AI-powered power-grid intelligence and predictive risk management platform th
 > **Team**: Invincible  
 > **🌐 Live Demo**: [https://gridgaurdai.vercel.app/](https://gridgaurdai.vercel.app/)  
 > **📦 GitHub Repository**: [https://github.com/ved1396/bob-ai-hackathon-invincible](https://github.com/ved1396/bob-ai-hackathon-invincible)
+>**📹 Demo Video**: https://www.youtube.com/watch?v=brdlT3_8OyI
 
 ---
 
