@@ -1,25 +1,30 @@
 # Presentation: GRIDGUARD AI
-## IBM Bob Hackathon Final Pitch Deck
+## IBM x CHARUSAT BOB AI Innovation Hackathon 2026 Final Pitch Deck
 
 ---
 
 ### Slide 1: Title Slide
 - **Project Name**: GRIDGUARD AI
-- **Subtitle**: Power Outage Prediction & Grid Equipment Failure Advisor
+- **Subtitle**: Power Grid Intelligence & Predictive Risk Management
+- **Hackathon**: IBM x CHARUSAT BOB AI Innovation Hackathon 2026
+- **Track**: AI
 - **Team**: Invincible
-- **Track**: Grid Infrastructure & Operational AI
+- **Team Lead**: Ved Vekariya (24DCS149)
+- **Team Members**: Ved Vekariya, Shlok Piprodia, Mayur Patel, Dhrumi Kansagara
+- **Live Demo**: https://gridgaurdai.vercel.app/
 
 ---
 
 ### Slide 2: The Problem
 - **Grid Vulnerability**: Unplanned transformer & substation breakdowns cause major blackouts, emergency costs, and public disruption.
-- **Flawed Maintenance**: Utilities rely on calendar intervals (e.g. 6-12 months) despite assets generating continuous health signals.
+- **Flawed Maintenance**: Utilities rely on fixed calendar intervals (e.g. 6–12 months) despite assets generating continuous health signals.
 - **Siloed Telemetry & Weather Ignored**: SCADA sensor signals (temp, vibration, oil quality) are isolated from weather storm front forecasts.
 
 ---
 
 ### Slide 3: The Solution — GRIDGUARD AI
-- An **operational intelligence platform** that unifies asset telemetry, weather intelligence, historical incident logs, asset age, load, and grid impact.
+- An **operational decision-support platform** that unifies asset telemetry, weather intelligence, historical incident logs, asset age, load, and grid impact into one risk intelligence layer.
+- **Value Proposition**: DETECT → EXPLAIN → PRIORITIZE → ACT
 - **Real-Time Predictive Risk Engine**: Calculates failure probability and ranks grid assets by composite risk.
 - **Load-Bearing IBM Bob Assistant**: Grounded in PostgreSQL telemetry, providing diagnostic explanations and executable operational actions.
 
@@ -28,8 +33,8 @@
 ### Slide 4: Multi-Factor Risk Calculation Engine
 - Composite Risk Formula:
   $$\text{Risk Score} = 0.30 \cdot S + 0.20 \cdot W + 0.15 \cdot H + 0.10 \cdot A + 0.10 \cdot L + 0.15 \cdot I$$
-- Risk Levels: `CRITICAL` ($\ge 80\%$), `HIGH` ($60\%-79\%$), `MEDIUM` ($40\%-59\%$), `LOW` ($< 40\%$).
-- Explainable Attributions: Pinpoints top-oil temp limit breaches, vibration harmonics elevation, and storm loading.
+- Risk Levels: `CRITICAL` ($\ge 80$), `HIGH` ($60 - 79$), `MEDIUM` ($40 - 59$), `LOW` ($< 40$).
+- Transparent Attributions: Pinpoints top-oil temp limit breaches, vibration harmonics elevation, and weather storm front surcharges.
 
 ---
 
@@ -69,9 +74,10 @@
 ---
 
 ### Slide 10: System Architecture & Tech Stack
-- **Frontend**: React 18, Vite, Tailwind CSS, Lucide Icons, Responsive Layouts.
+- **Frontend**: React 18, Vite, Tailwind CSS, Lucide React Icons, Responsive Layouts.
 - **Backend**: Python 3.11, FastAPI, SQLAlchemy, Uvicorn.
 - **Database**: PostgreSQL / Supabase (Single Persistent Source of Truth).
+- **Deployment**: Vercel (Frontend Hosting).
 
 ---
 
@@ -83,6 +89,6 @@
 
 ---
 
-### Slide 12: Business Impact & Future Scope
-- **Impact**: Reduces unplanned transformer outages by up to 45%, decreases emergency restoration ETA, and extends grid asset lifespan.
-- **Future Scope**: Autonomous SCADA switching control, IoT edge sensor integration, and regional utility interconnect mesh.
+### Slide 12: Business Impact & What We're Most Proud Of
+- **Impact**: Connects prediction to action, reducing unplanned outages, shortening restoration ETA, and extending grid asset lifespan.
+- **Narrative**: "GRIDGUARD AI does not stop at predicting risk. It connects prediction to action."
