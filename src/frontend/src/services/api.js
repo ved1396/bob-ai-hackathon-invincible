@@ -10,7 +10,16 @@ import {
   KPI_SUMMARY
 } from '../data/demoData';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+export const getApiBaseUrl = () => {
+  let envUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000/api').trim();
+  envUrl = envUrl.replace(/\/+$/, '');
+  if (!envUrl.endsWith('/api')) {
+    envUrl += '/api';
+  }
+  return envUrl;
+};
+
+export const BASE_URL = getApiBaseUrl();
 const DEFAULT_TIMEOUT_MS = 10000; // 10s maximum timeout
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = DEFAULT_TIMEOUT_MS) {
@@ -27,6 +36,9 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = DEFAULT_TIMEOUT_M
     clearTimeout(timer);
     if (err.name === 'AbortError') {
       throw new Error(`Database/API timeout (${timeoutMs / 1000}s). Server is taking too long to respond.`);
+    }
+    if (err instanceof TypeError && err.message.includes('Failed to fetch')) {
+      throw new Error(`Unable to connect to FastAPI backend at ${BASE_URL}. Please verify VITE_API_URL environment variable and backend CORS configuration.`);
     }
     throw err;
   }

@@ -31,17 +31,26 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
+cors_env = os.environ.get("CORS_ORIGINS", "")
+if cors_env:
+    allowed_origins = [o.strip() for o in cors_env.split(",") if o.strip()]
+    if "https://gridgaurdai.vercel.app" not in allowed_origins:
+        allowed_origins.append("https://gridgaurdai.vercel.app")
+else:
+    allowed_origins = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "https://gridgaurdai.vercel.app",
         "*"
-    ],
+    ]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -130,7 +139,8 @@ class ActionExecutePayload(BaseModel):
 # --- API Endpoints ---
 
 @app.get("/")
-def root():
+@app.get("/health")
+def health_check():
     return {"status": "ok", "app": "GRIDGUARD AI Platform", "database": "PostgreSQL"}
 
 @app.get("/api/overview")

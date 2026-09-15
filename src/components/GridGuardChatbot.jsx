@@ -14,7 +14,7 @@ import {
   CheckCircle2,
   Play
 } from 'lucide-react';
-import { executeBobAction } from '../services/api';
+import { executeBobAction, BASE_URL } from '../services/api';
 
 const SUGGESTED_QUESTIONS = [
   "Which asset has the highest failure risk?",
@@ -83,7 +83,7 @@ Ask any diagnostic inquiry regarding monitored substations, real-time sensor tel
           text: m.text,
         }));
 
-      const res = await fetch('http://localhost:8000/api/chat', {
+      const res = await fetch(`${BASE_URL}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
